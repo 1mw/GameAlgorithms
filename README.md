@@ -1,2 +1,2 @@
-# ChessAlgorithm
-A chess algorithm that probably doesn't work
+# GameAlgorithms
+Various game algorithms that probably don't work.
