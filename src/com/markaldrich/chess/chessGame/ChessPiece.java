@@ -6,22 +6,25 @@ import java.util.ArrayList;
  * Created by maste on 7/2/2016.
  */
 public enum ChessPiece {
-	H_PAWN(10),
-	H_KNIGHT(20),
-	H_ROOK(20),
-	H_BISHOP(20),
-	H_KING(100),
-	H_QUEEN(50),
-	C_PAWN(10),
-	C_KNIGHT(20),
-	C_ROOK(20),
-	C_BISHOP(20),
-	C_KING(100),
-	C_QUEEN(50);
+	H_PAWN(10, true),
+	H_KNIGHT(20, true),
+	H_ROOK(20, true),
+	H_BISHOP(20, true),
+	H_KING(100, true),
+	H_QUEEN(50, true),
 	
-	int value;
-	ChessPiece(int value) {
+	C_PAWN(10, false),
+	C_KNIGHT(20, false),
+	C_ROOK(20, false),
+	C_BISHOP(20, false),
+	C_KING(100, false),
+	C_QUEEN(50, false);
+	
+	private int value;
+	private boolean human;
+	ChessPiece(int value, boolean human) {
 		this.value = value;
+		this.human = human;
 	}
 	
 	ArrayList<RelativeCoordinate> getPossibleMoves(int x, int y, ChessBoard board) {
@@ -31,19 +34,39 @@ public enum ChessPiece {
 			case H_PAWN:
 				// #
 				// #
-				if (ChessBoard.inBounds(x, y - 1) && board.getPiece(x, y - 1) == null) {
+				if (ChessBoard.inBounds(x, y - 1) && board.isEmpty(x, y - 1)) {
 					moves.add(new RelativeCoordinate(x, y - 1));
 				}
+				
 				// #
 				//  #
-				if (ChessBoard.inBounds(x - 1, y - 1) && board.getPiece(x - 1, y - 1) != null) {
+				if (ChessBoard.inBounds(x - 1, y - 1) && board.canCapture(x - 1, y - 1, human)) {
 					moves.add(new RelativeCoordinate(x - 1, y - 1));
 				}
 				
 				//  #
 				// #
-				if (ChessBoard.inBounds(x + 1, y - 1) && board.getPiece(x + 1, y - 1) != null) {
+				if (ChessBoard.inBounds(x + 1, y - 1) && board.canCapture(x + 1, y - 1, human)) {
 					moves.add(new RelativeCoordinate(x + 1, y - 1));
+				}
+				break;
+			case C_PAWN:
+				// #
+				// #
+				if (ChessBoard.inBounds(x, y + 1) && board.isEmpty(x, y + 1)) {
+					moves.add(new RelativeCoordinate(x, y + 1));
+				}
+				
+				//  #
+				// #
+				if (ChessBoard.inBounds(x - 1, y + 1) && board.canCapture(x - 1, y + 1, human)) {
+					moves.add(new RelativeCoordinate(x - 1, y + 1));
+				}
+				
+				// #
+				//  #
+				if (ChessBoard.inBounds(x + 1, y + 1) && board.canCapture(x + 1, y + 1, human)) {
+					moves.add(new RelativeCoordinate(x + 1, y + 1));
 				}
 				break;
 			case H_KNIGHT:
@@ -51,52 +74,52 @@ public enum ChessPiece {
 				// ##
 				//  #
 				//  #
-				if (ChessBoard.inBounds(x - 1, y + 2)) {
+				if (ChessBoard.inBounds(x - 1, y + 2) && board.canCaptureOrMove(x - 1, y + 2, human)) {
 					moves.add(new RelativeCoordinate(x - 1, y + 2));
 				}
 				
 				// ##
 				// #
 				// #
-				if (ChessBoard.inBounds(x + 1, y + 2)) {
+				if (ChessBoard.inBounds(x + 1, y + 2) && board.canCaptureOrMove(x + 1, y + 2, human)) {
 					moves.add(new RelativeCoordinate(x + 1, y + 2));
 				}
 				
 				//  #
 				//  #
 				// ##
-				if (ChessBoard.inBounds(x - 1, y - 2)) {
+				if (ChessBoard.inBounds(x - 1, y - 2) && board.canCaptureOrMove(x - 1, y - 2, human)) {
 					moves.add(new RelativeCoordinate(x - 1, y - 2));
 				}
 				
 				// #
 				// #
 				// ##
-				if (ChessBoard.inBounds(x + 1, y - 2)) {
+				if (ChessBoard.inBounds(x + 1, y - 2) && board.canCaptureOrMove(x + 1, y - 2, human)) {
 					moves.add(new RelativeCoordinate(x + 1, y - 2));
 				}
 				
 				// #
 				// ###
-				if (ChessBoard.inBounds(x - 2, y - 1)) {
+				if (ChessBoard.inBounds(x - 2, y - 1) && board.canCaptureOrMove(x - 2, y - 1, human)) {
 					moves.add(new RelativeCoordinate(x - 2, y - 1));
 				}
 				
 				// ###
 				// #
-				if (ChessBoard.inBounds(x - 2, y + 1)) {
+				if (ChessBoard.inBounds(x - 2, y + 1) && board.canCaptureOrMove(x - 2, y + 1, human)) {
 					moves.add(new RelativeCoordinate(x - 2, y + 1));
 				}
 				
 				//   #
 				// ###
-				if (ChessBoard.inBounds(x + 2, y - 1)) {
+				if (ChessBoard.inBounds(x + 2, y - 1) && board.canCaptureOrMove(x + 2, y - 1, human)) {
 					moves.add(new RelativeCoordinate(x + 2, y - 1));
 				}
 				
 				// ###
 				//   #
-				if (ChessBoard.inBounds(x + 2, y + 1)) {
+				if (ChessBoard.inBounds(x + 2, y + 1) && board.canCaptureOrMove(x + 2, y + 1, human)) {
 					moves.add(new RelativeCoordinate(x + 2, y + 1));
 				}
 				break;
@@ -104,36 +127,47 @@ public enum ChessPiece {
 			case C_ROOK:
 				// Moving ->
 				for (int xx = x + 1; ChessBoard.inBounds(xx, y); xx++) {
+					if (board.getPiece(xx, y).human == human) {
+						break;
+					}
 					moves.add(new RelativeCoordinate(xx, y));
-					if (board.getPiece(xx, y) != null) {
+					if (board.canCapture(xx, y, human)) {
 						break;
 					}
 				}
 
 				// Moving <-
 				for (int xx = x - 1; ChessBoard.inBounds(xx, y); xx--) {
+					if (board.getPiece(xx, y).human == human) {
+						break;
+					}
 					moves.add(new RelativeCoordinate(xx, y));
-					if (board.getPiece(xx, y) != null) {
+					if (board.canCapture(xx, y, human)) {
 						break;
 					}
 				}
 				
 				// Moving /\
 				for (int yy = y - 1; ChessBoard.inBounds(x, yy); yy--) {
+					if (board.getPiece(x, yy).human == human) {
+						break;
+					}
 					moves.add(new RelativeCoordinate(x, yy));
-					if (board.getPiece(x, yy) != null) {
+					if (board.canCapture(x, yy, human)) {
 						break;
 					}
 				}
 				
 				// Moving \/
 				for (int yy = y + 1; ChessBoard.inBounds(x, yy); yy++) {
+					if (board.getPiece(x, yy).human == human) {
+						break;
+					}
 					moves.add(new RelativeCoordinate(x, yy));
-					if (board.getPiece(x, yy) != null) {
+					if (board.canCapture(x, yy, human)) {
 						break;
 					}
 				}
-
 				break;
 			case H_BISHOP:
 			case C_BISHOP:
@@ -141,22 +175,209 @@ public enum ChessPiece {
 				// UP
 				//  \
 				for (int xx = x - 1, yy = y - 1; ChessBoard.inBounds(xx, yy); xx--, yy--) {
+					if (board.getPiece(xx, yy).human == human) {
+						break;
+					}
 					moves.add(new RelativeCoordinate(xx, yy));
-					if (board.getPiece(xx, yy) != null) {
+					if (board.canCapture(xx, yy, human)) {
 						break;
 					}
 				}
 				
+				// Moving
+				//  UP
+				// /
+				for (int xx = x + 1, yy = y - 1; ChessBoard.inBounds(xx, yy); xx++, yy--) {
+					if (board.getPiece(xx, yy).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(xx, yy));
+					if (board.canCapture(xx, yy, human)) {
+						break;
+					}
+				}
+				
+				// Moving
+				//     /
+				// DOWN
+				for (int xx = x - 1, yy = y + 1; ChessBoard.inBounds(xx, yy); xx--, yy++) {
+					if (board.getPiece(xx, yy).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(xx, yy));
+					if (board.canCapture(xx, yy, human)) {
+						break;
+					}
+				}
+				
+				// Moving
+				// \
+				//  DOWN
+				for (int xx = x + 1, yy = y + 1; ChessBoard.inBounds(xx, yy); xx++, yy++) {
+					if (board.getPiece(xx, yy).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(xx, yy));
+					if (board.canCapture(xx, yy, human)) {
+						break;
+					}
+				}
 				break;
 			case H_KING:
+			case C_KING:
+				//  *
+				//  #
+				// 
+				if (ChessBoard.inBounds(x, y - 1) && board.canCaptureOrMove(x, y - 1, human)) {
+					moves.add(new RelativeCoordinate(x, y - 1));
+				}
+				
+				// * 
+				//  #
+				// 
+				if (ChessBoard.inBounds(x - 1, y - 1) && board.canCaptureOrMove(x - 1, y - 1, human)) {
+					moves.add(new RelativeCoordinate(x - 1, y - 1));
+				}
+				
+				//  
+				// *#
+				// 
+				if (ChessBoard.inBounds(x - 1, y) && board.canCaptureOrMove(x - 1, y, human)) {
+					moves.add(new RelativeCoordinate(x - 1, y));
+				}
+				
+				//  
+				//  #
+				// *
+				if (ChessBoard.inBounds(x - 1, y + 1) && board.canCaptureOrMove(x - 1, y + 1, human)) {
+					moves.add(new RelativeCoordinate(x - 1, y + 1));
+				}
+				
+				//  
+				//  #
+				//  *
+				if (ChessBoard.inBounds(x, y + 1) && board.canCaptureOrMove(x, y + 1, human)) {
+					moves.add(new RelativeCoordinate(x, y + 1));
+				}
+				
+				//  
+				//  #
+				//   *
+				if (ChessBoard.inBounds(x + 1, y + 1) && board.canCaptureOrMove(x + 1, y + 1, human)) {
+					moves.add(new RelativeCoordinate(x + 1, y + 1));
+				}
+				
+				//  
+				//  #*
+				//   
+				if (ChessBoard.inBounds(x + 1, y) && board.canCaptureOrMove(x + 1, y, human)) {
+					moves.add(new RelativeCoordinate(x + 1, y));
+				}
+				
+				//   *
+				//  #
+				//   
+				if (ChessBoard.inBounds(x + 1, y - 1) && board.canCaptureOrMove(x + 1, y - 1, human)) {
+					moves.add(new RelativeCoordinate(x + 1, y - 1));
+				}
 				break;
 			case H_QUEEN:
-				break;
-			case C_PAWN:
-				break;
-			case C_KING:
-				break;
 			case C_QUEEN:
+				// Moving
+				// UP
+				//  \
+				for (int xx = x - 1, yy = y - 1; ChessBoard.inBounds(xx, yy); xx--, yy--) {
+					if (board.getPiece(xx, yy).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(xx, yy));
+					if (board.canCapture(xx, yy, human)) {
+						break;
+					}
+				}
+				
+				// Moving
+				//  UP
+				// /
+				for (int xx = x + 1, yy = y - 1; ChessBoard.inBounds(xx, yy); xx++, yy--) {
+					if (board.getPiece(xx, yy).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(xx, yy));
+					if (board.canCapture(xx, yy, human)) {
+						break;
+					}
+				}
+				
+				// Moving
+				//     /
+				// DOWN
+				for (int xx = x - 1, yy = y + 1; ChessBoard.inBounds(xx, yy); xx--, yy++) {
+					if (board.getPiece(xx, yy).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(xx, yy));
+					if (board.canCapture(xx, yy, human)) {
+						break;
+					}
+				}
+				
+				// Moving
+				// \
+				//  DOWN
+				for (int xx = x + 1, yy = y + 1; ChessBoard.inBounds(xx, yy); xx++, yy++) {
+					if (board.getPiece(xx, yy).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(xx, yy));
+					if (board.canCapture(xx, yy, human)) {
+						break;
+					}
+				}
+				
+				// Moving ->
+				for (int xx = x + 1; ChessBoard.inBounds(xx, y); xx++) {
+					if (board.getPiece(xx, y).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(xx, y));
+					if (board.canCapture(xx, y, human)) {
+						break;
+					}
+				}
+				
+				// Moving <-
+				for (int xx = x - 1; ChessBoard.inBounds(xx, y); xx--) {
+					if (board.getPiece(xx, y).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(xx, y));
+					if (board.canCapture(xx, y, human)) {
+						break;
+					}
+				}
+				
+				// Moving /\
+				for (int yy = y - 1; ChessBoard.inBounds(x, yy); yy--) {
+					if (board.getPiece(x, yy).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(x, yy));
+					if (board.canCapture(x, yy, human)) {
+						break;
+					}
+				}
+				
+				// Moving \/
+				for (int yy = y + 1; ChessBoard.inBounds(x, yy); yy++) {
+					if (board.getPiece(x, yy).human == human) {
+						break;
+					}
+					moves.add(new RelativeCoordinate(x, yy));
+					if (board.canCapture(x, yy, human)) {
+						break;
+					}
+				}
 				break;
 		}
 		
@@ -166,5 +387,21 @@ public enum ChessPiece {
 	public static void main(String[] args) {
 		//ChessPiece e = ChessPiece.H_BISHOP;
 		//e.getPossibleMoves(0, 0);
+	}
+	
+	public int getValue() {
+		return value;
+	}
+	
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
+	public boolean isHuman() {
+		return human;
+	}
+	
+	public void setHuman(boolean human) {
+		this.human = human;
 	}
 }

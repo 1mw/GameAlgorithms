@@ -36,7 +36,6 @@ public class RelativeCoordinate {
 
 		if (x != that.x) return false;
 		return y == that.y;
-
 	}
 
 	@Override
