@@ -20,8 +20,11 @@ public class ChessGame {
 	
 	public void start() {
 		while (true) {
-			human.move();
-			computer.move();
+			System.out.println(currentBoard.toString());
+			currentBoard.doMove(human.move());
+			System.out.println(currentBoard.toString());
+			currentBoard.doMove(computer.move());
+			System.out.println(currentBoard.toString());
 			
 			if (currentBoard.humanWon()) {
 				System.out.println("Human was won!");

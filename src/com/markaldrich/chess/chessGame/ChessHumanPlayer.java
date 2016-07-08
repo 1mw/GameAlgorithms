@@ -16,7 +16,7 @@ public class ChessHumanPlayer extends ChessPlayer {
 	@Override
 	public ChessMove move() {
 		while (true) {
-			System.out.print("Enter coordinates of piece to move and coordinates of where to move piece (ax, ay, bx, by): ");
+			System.out.print("Enter coordinates of move (ax, ay, bx, by): ");
 			String input = scanner.nextLine();
 			
 			input = input.replace(" ", "");
