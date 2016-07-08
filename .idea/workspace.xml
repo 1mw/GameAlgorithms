@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e726b52f-0e97-4b72-8453-8d5f39fe4c49" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/RelativeCoordinate.java" afterPath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/Coordinate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessBoard.class" afterPath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessBoardTest.class" afterPath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessBoardTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessPiece.class" afterPath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessPiece.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessPlayer.class" afterPath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/RelativeCoordinate.class" afterPath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/RelativeCoordinate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoard.java" afterPath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoardTest.java" afterPath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoardTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java" afterPath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPlayer.java" afterPath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPlayer.java" />
     </list>
     <ignored path="ChessAlgorithm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,21 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChessPiece.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChessPiece.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4901961">
-              <caret line="378" column="21" selection-start-line="378" selection-start-column="21" selection-end-line="378" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="230" column="65" selection-start-line="230" selection-start-column="65" selection-end-line="230" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChessBoardTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChessBoardTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoardTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="319" column="5" selection-start-line="319" selection-start-column="5" selection-end-line="319" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.6405229">
+              <caret line="555" column="8" selection-start-line="555" selection-start-column="8" selection-end-line="555" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#426#427#0" expanded="true" />
@@ -63,8 +52,11 @@
         <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-              <folding />
+              <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
+              <folding>
+                <element signature="e#2266#2267#0" expanded="true" />
+                <element signature="e#2320#2321#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -768,27 +760,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests - 2016.07.07 at 23h 54m 41s.xml">
-      <configuration name="All Tests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.07.07 at 23h 59m 25s.xml">
-      <configuration name="All Tests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.07.08 at 00h 00m 04s.xml">
-      <configuration name="All Tests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.07.08 at 00h 08m 33s.xml">
-      <configuration name="All Tests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.07.08 at 00h 10m 47s.xml">
-      <configuration name="All Tests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.07.08 at 00h 11m 42s.xml">
-      <configuration name="All Tests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="All_Tests - 2016.07.08 at 00h 13m 05s.xml">
-      <configuration name="All Tests" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="All_Tests - 2016.07.08 at 00h 24m 45s.xml">
       <configuration name="All Tests" configurationId="TestNG" />
     </history-entry>
@@ -796,6 +767,27 @@
       <configuration name="All Tests" configurationId="TestNG" />
     </history-entry>
     <history-entry file="All_Tests - 2016.07.08 at 00h 27m 40s.xml">
+      <configuration name="All Tests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="All_Tests - 2016.07.08 at 00h 38m 41s.xml">
+      <configuration name="All Tests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="All_Tests - 2016.07.08 at 00h 39m 26s.xml">
+      <configuration name="All Tests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="All_Tests - 2016.07.08 at 00h 45m 25s.xml">
+      <configuration name="All Tests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="All_Tests - 2016.07.08 at 00h 45m 46s.xml">
+      <configuration name="All Tests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="All_Tests - 2016.07.08 at 00h 46m 59s.xml">
+      <configuration name="All Tests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="All_Tests - 2016.07.08 at 00h 55m 24s.xml">
+      <configuration name="All Tests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="All_Tests - 2016.07.08 at 00h 56m 00s.xml">
       <configuration name="All Tests" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -852,7 +844,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-          <folding />
+          <folding>
+            <element signature="e#2266#2267#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -921,7 +916,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-          <folding />
+          <folding>
+            <element signature="e#2266#2267#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -990,7 +988,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
-          <folding />
+          <folding>
+            <element signature="e#2266#2267#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1051,7 +1052,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#2266#2267#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1235,14 +1239,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1253,23 +1249,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoardTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="319" column="5" selection-start-line="319" selection-start-column="5" selection-end-line="319" selection-end-column="5" />
+          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#2266#2267#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4901961">
-          <caret line="378" column="21" selection-start-line="378" selection-start-column="21" selection-end-line="378" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="230" column="65" selection-start-line="230" selection-start-column="65" selection-end-line="230" selection-end-column="65" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessBoardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6405229">
+          <caret line="555" column="8" selection-start-line="555" selection-start-column="8" selection-end-line="555" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
