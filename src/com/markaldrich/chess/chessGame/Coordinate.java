@@ -3,10 +3,10 @@ package com.markaldrich.chess.chessGame;
 /**
  * Created by maste on 7/3/2016.
  */
-public class RelativeCoordinate {
+public class Coordinate {
 	private int x, y;
 
-	public RelativeCoordinate(int x, int y) {
+	public Coordinate(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -32,7 +32,7 @@ public class RelativeCoordinate {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 
-		RelativeCoordinate that = (RelativeCoordinate) o;
+		Coordinate that = (Coordinate) o;
 
 		if (x != that.x) return false;
 		return y == that.y;
@@ -43,5 +43,13 @@ public class RelativeCoordinate {
 		int result = x;
 		result = 31 * result + y;
 		return result;
+	}
+	
+	@Override
+	public String toString() {
+		return "Coordinate{" +
+				"x=" + x +
+				", y=" + y +
+				'}';
 	}
 }
