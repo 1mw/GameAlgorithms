@@ -22,4 +22,6 @@ public abstract class ChessPlayer {
 	public void setHuman(boolean human) {
 		this.human = human;
 	}
+	
+	public abstract ChessMove move();
 }

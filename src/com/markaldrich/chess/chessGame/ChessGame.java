@@ -12,13 +12,25 @@ public class ChessGame {
 	private ChessBoard currentBoard;
 	
 	public ChessGame(Scanner scanner) {
-		// INITIALIZE BOARD!
+		currentBoard = new ChessBoard();
 		this.scanner = scanner;
 		human = new ChessHumanPlayer(currentBoard, scanner);
-		computer = new ChessComputerPlayer();
+		computer = new ChessComputerPlayer(currentBoard, 123L);
 	}
 	
 	public void start() {
-		
+		while (true) {
+			human.move();
+			computer.move();
+			
+			if (currentBoard.humanWon()) {
+				System.out.println("Human was won!");
+				return;
+			}
+			if (currentBoard.computerWon()) {
+				System.out.println("Computer has won!");
+				return;
+			}
+		}
 	}
 }

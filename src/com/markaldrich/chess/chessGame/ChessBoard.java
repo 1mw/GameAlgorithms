@@ -1,5 +1,7 @@
 package com.markaldrich.chess.chessGame;
 
+import java.util.Arrays;
+
 /**
  * Created by maste on 7/2/2016.
  */
@@ -89,5 +91,51 @@ public class ChessBoard {
 	public static boolean inBounds(int x, int y) {
 		return !(x < 0 || x > 7 || y < 0 || y > 7);
 	}
+	
+	public boolean containsPiece(ChessPiece piece) {
+		for (int y = 0; y < 8; y++) {
+			for (int x = 0; x < 8; x++) {
+				if (getPiece(x, y) == piece) {
+					return true;
+				}
+			}
+		}
 		
+		
+		return false;
+	}
+	
+	public boolean humanWon() {
+		return containsPiece(ChessPiece.H_KING) && !containsPiece(ChessPiece.C_KING);
+	}
+	
+	public boolean computerWon() {
+		return containsPiece(ChessPiece.C_KING) && !containsPiece(ChessPiece.H_KING);
+	}
+	
+	public void doMove(ChessMove move) {
+		if (!move.isValidMove(this)) {
+		 	return;
+		}
+		
+		ChessPiece pieceToMove = getPiece(move.getAx(), move.getAy());
+		setPiece(move.getAx(), move.getAy(), null);
+		setPiece(move.getBx(), move.getBy(), pieceToMove);
+	}
+	
+	@Override
+	public String toString() {
+		String ret = "\t\t\t\tX";
+		ret += "\n\t0\t1\t2\t3\t4\t5\t6\t7";
+		
+		for (int y = 0; y < 8; y++) {
+			ret += "\n" + y;
+			for (int x = 0; x < 8; x++) {
+				ChessPiece piece = getPiece(x, y);
+				ret += "\t" + ((piece == null) ? "[]" : piece.toString());
+			}
+		}
+		
+		return ret;
+	}
 }

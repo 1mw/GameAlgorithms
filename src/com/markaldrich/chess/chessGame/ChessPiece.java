@@ -27,6 +27,38 @@ public enum ChessPiece {
 		this.human = human;
 	}
 	
+	@Override
+	public String toString() {
+		switch (this) {
+			case H_PAWN:
+				return "HPA";
+			case H_KNIGHT:
+				return "HKN";
+			case H_ROOK:
+				return "HRO";
+			case H_BISHOP:
+				return "HBI";
+			case H_KING:
+				return "HKI";
+			case H_QUEEN:
+				return "HQU";
+			case C_PAWN:
+				return "CPA";
+			case C_KNIGHT:
+				return "CKN";
+			case C_ROOK:
+				return "CRO";
+			case C_BISHOP:
+				return "CBI";
+			case C_KING:
+				return "CKI";
+			case C_QUEEN:
+				return "CQU";
+		}
+		
+		return "This will never happen but I am just doing this to make Java happy.";
+	}
+	
 	public ArrayList<Coordinate> getPossibleMoves(int x, int y, ChessBoard board) {
 		ArrayList<Coordinate> moves = new ArrayList<>();
 		

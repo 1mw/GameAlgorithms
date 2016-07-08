@@ -13,7 +13,13 @@ public class ChessComputerPlayer extends ChessPlayer {
 		random = new Random(seed);
 	}
 	
-	public ChessComputerPlayer() {
+	public ChessComputerPlayer(ChessBoard board) {
+		this.board = board;
 		random = new Random();
+	}
+	
+	@Override
+	public ChessMove move() {
+		return null;
 	}
 }

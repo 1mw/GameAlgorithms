@@ -45,4 +45,9 @@ public class ChessMove {
 		this.by = by;
 	}
 	
+	public boolean isValidMove(ChessBoard board) {
+		return ChessBoard.inBounds(ax, ay) && ChessBoard.inBounds(bx, by) 
+			&& board.getPiece(ax, ay).getPossibleMoves(ax, ay, board).contains(new Coordinate(bx, by));
+	}
+	
 }

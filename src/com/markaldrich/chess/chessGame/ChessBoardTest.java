@@ -574,4 +574,30 @@ public class ChessBoardTest {
 		Assert.assertTrue(possibleMoves.contains(new Coordinate(2, 1)));
 		Assert.assertTrue(possibleMoves.contains(new Coordinate(1, 0)));
 	}
+	
+	@Test
+	public void testDoMove() {
+		ChessBoard b = new ChessBoard();
+		b.clear();
+		
+		/*
+		  	0	1	2	3	4	5	6	7
+		 0	[]	[]	[]	[]	[]	[]	[]	[]
+		 1	[]	CPA	[]	[]	[]	[]	[]	[]
+		 2	HKN	[]	HPA	[]	[]	[]	[]	[]
+		 */
+		b.setPiece(1, 1, ChessPiece.C_PAWN);
+		b.setPiece(0, 2, ChessPiece.H_KNIGHT);
+		b.setPiece(2, 2, ChessPiece.H_PAWN);
+		
+		// CPA to capture HKN
+		ChessMove move = new ChessMove(1, 1, 0, 2);
+		
+		b.doMove(move);
+		
+		System.out.println(b.toString());
+		
+		Assert.assertNull(b.getPiece(1, 1));
+		Assert.assertEquals(b.getPiece(0, 2), ChessPiece.C_PAWN);
+	}
 }
