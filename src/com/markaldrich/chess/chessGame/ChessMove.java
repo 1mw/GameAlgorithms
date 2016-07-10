@@ -50,4 +50,13 @@ public class ChessMove {
 			&& board.getPiece(ax, ay).getPossibleMoves(ax, ay, board).contains(new Coordinate(bx, by));
 	}
 	
+	@Override
+	public String toString() {
+		return "ChessMove{" +
+				"ax=" + ax +
+				", ay=" + ay +
+				", bx=" + bx +
+				", by=" + by +
+				'}';
+	}
 }

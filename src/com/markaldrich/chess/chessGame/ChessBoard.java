@@ -1,6 +1,8 @@
 package com.markaldrich.chess.chessGame;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 /**
  * Created by maste on 7/2/2016.
@@ -115,6 +117,7 @@ public class ChessBoard {
 	
 	public void doMove(ChessMove move) {
 		if (!move.isValidMove(this)) {
+			System.err.println("MOVE IS NOT VALID! move=" + move.toString());
 		 	return;
 		}
 		
@@ -137,5 +140,33 @@ public class ChessBoard {
 		}
 		
 		return ret;
+	}
+	
+	public ArrayList<Coordinate> getAllPieces() {
+		ArrayList<Coordinate> allPieces = new ArrayList<>();
+		
+		for (int y = 0; y < 8; y++) {
+			for (int x = 0; x < 8; x++) {
+				ChessPiece piece = getPiece(x, y);
+				
+				if (piece != null) {
+					allPieces.add(new Coordinate(x, y));
+				}
+			}
+		}
+		
+		return allPieces;
+	}
+	
+	public ArrayList<Coordinate> allComputerPieces() {
+		return new ArrayList<Coordinate>(getAllPieces().stream()
+				.filter((c) -> !(getPiece(c.getX(), c.getY()).isHuman()))
+				.collect(Collectors.toList()));
+	}
+	
+	public ArrayList<Coordinate> allHumanPieces() {
+		return new ArrayList<Coordinate>(getAllPieces().stream()
+				.filter((c) -> getPiece(c.getX(), c.getY()).isHuman())
+				.collect(Collectors.toList()));
 	}
 }

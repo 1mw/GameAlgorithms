@@ -10,14 +10,14 @@ public enum ChessPiece {
 	H_KNIGHT(20, true),
 	H_ROOK(20, true),
 	H_BISHOP(20, true),
-	H_KING(100, true),
+	H_KING(1000, true),
 	H_QUEEN(50, true),
 	
 	C_PAWN(10, false),
 	C_KNIGHT(20, false),
 	C_ROOK(20, false),
 	C_BISHOP(20, false),
-	C_KING(100, false),
+	C_KING(1000, false),
 	C_QUEEN(50, false);
 	
 	private final int value;

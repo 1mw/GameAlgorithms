@@ -15,7 +15,7 @@ public class ChessGame {
 		currentBoard = new ChessBoard();
 		this.scanner = scanner;
 		human = new ChessHumanPlayer(currentBoard, scanner);
-		computer = new ChessComputerPlayer(currentBoard, 123L);
+		computer = new ChessComputerPlayer(currentBoard, 5, 123L);
 	}
 	
 	public void start() {
@@ -24,7 +24,6 @@ public class ChessGame {
 			currentBoard.doMove(human.move());
 			System.out.println(currentBoard.toString());
 			currentBoard.doMove(computer.move());
-			System.out.println(currentBoard.toString());
 			
 			if (currentBoard.humanWon()) {
 				System.out.println("Human was won!");
