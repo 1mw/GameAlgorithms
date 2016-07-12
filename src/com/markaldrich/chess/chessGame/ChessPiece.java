@@ -81,6 +81,13 @@ public enum ChessPiece {
 				if (ChessBoard.inBounds(x + 1, y - 1) && board.canCapture(x + 1, y - 1, human)) {
 					moves.add(new Coordinate(x + 1, y - 1));
 				}
+				
+				// #
+				// 
+				// #
+				if (y == 6 && board.isEmpty(x, y - 1) && board.isEmpty(x, y - 2)) {
+					moves.add(new Coordinate(x, y - 2));
+				}
 				break;
 			case C_PAWN:
 				// #
@@ -99,6 +106,13 @@ public enum ChessPiece {
 				//  #
 				if (ChessBoard.inBounds(x + 1, y + 1) && board.canCapture(x + 1, y + 1, human)) {
 					moves.add(new Coordinate(x + 1, y + 1));
+				}
+				
+				// #
+				// 
+				// #
+				if (y == 1 && board.isEmpty(x, y + 1) && board.isEmpty(x, y + 2)) {
+					moves.add(new Coordinate(x, y + 2));
 				}
 				break;
 			case H_KNIGHT:

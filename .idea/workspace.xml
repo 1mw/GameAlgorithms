@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e726b52f-0e97-4b72-8453-8d5f39fe4c49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessBoard.class" afterPath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessBoard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessComputerPlayer.class" afterPath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessComputerPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessMove.class" afterPath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessMove.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessPiece.class" afterPath="$PROJECT_DIR$/out/production/ChessAlgorithm/com/markaldrich/chess/chessGame/ChessPiece.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/markaldrich/chess/GUI.java" afterPath="$PROJECT_DIR$/src/com/markaldrich/chess/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessComputerPlayer.java" afterPath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessComputerPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessMove.java" afterPath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessMove.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java" afterPath="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java" />
     </list>
     <ignored path="ChessAlgorithm.iws" />
@@ -32,10 +24,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.79738563">
               <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -56,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChessPiece.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChessPiece.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8366013">
-              <caret line="418" column="19" selection-start-line="418" selection-start-column="19" selection-end-line="418" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -194,8 +186,8 @@
         <option value="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessMove.java" />
         <option value="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPlayer.java" />
         <option value="$PROJECT_DIR$/src/com/markaldrich/chess/GUI.java" />
-        <option value="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java" />
         <option value="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessComputerPlayer.java" />
+        <option value="$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java" />
       </list>
     </option>
   </component>
@@ -1461,16 +1453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessComputerPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1483,9 +1465,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/chessGame/ChessPiece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8366013">
-          <caret line="418" column="19" selection-start-line="418" selection-start-column="19" selection-end-line="418" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/markaldrich/chess/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.79738563">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
