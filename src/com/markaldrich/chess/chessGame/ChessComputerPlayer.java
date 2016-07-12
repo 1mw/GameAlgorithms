@@ -9,8 +9,12 @@ import java.util.Random;
  * Created by maste on 7/2/2016.
  */
 public class ChessComputerPlayer extends ChessPlayer {
-	private Random random;
+	private volatile Random random;
 	private int difficulty;
+	
+	private volatile ArrayList<ChessMove> possibleMoves = new ArrayList<>();
+	private volatile int threads = 1;
+	private final int maxThreads = Runtime.getRuntime().availableProcessors();
 	
 	public ChessComputerPlayer(ChessBoard board, int difficulty, long seed) {
 		this.difficulty = difficulty;
@@ -27,14 +31,38 @@ public class ChessComputerPlayer extends ChessPlayer {
 	@Override
 	public ChessMove move() {
 		LinkedHashMap<ChessMove, Integer> moves = new LinkedHashMap<>();
+		
 		for (Coordinate coordinate : board.allComputerPieces()) {
 			int x = coordinate.getX(), y = coordinate.getY();
-			ArrayList<ChessMove> possibleMoves = new ArrayList<>();
 			board.getPiece(x, y).getPossibleMoves(x, y, board)
 					.forEach((c) -> possibleMoves.add(new ChessMove(x, y, c.getX(), c.getY())));
 			
 			for (ChessMove move : possibleMoves) {
-				moves.put(move, favorabilityOfMove(move, board, 0, difficulty));
+				if (threads < maxThreads) {
+					threads++;
+					new Thread() {
+						@Override
+						public void run() {
+							moves.put(move, favorabilityOfMove(move, board, 0, difficulty));
+							threads--;
+						}
+					}.start();
+				} else {
+					moves.put(move, favorabilityOfMove(move, board, 0, difficulty));
+				}
+			}
+			
+			possibleMoves.clear();
+		}
+		
+		int counter = 0;
+		while (threads > 1) {
+			if (counter == 1000) {
+				System.out.println("threads=" + threads);
+				System.out.println("moves.size()=" + moves.size());
+				counter = 0;
+			} else {
+				counter++;
 			}
 		}
 		
@@ -49,6 +77,9 @@ public class ChessComputerPlayer extends ChessPlayer {
 				move = movesToConsider[i];
 			}
 		}
+		
+		System.out.println(move);
+		System.out.println("CPU DONE MOVING");
 		
 		return move;
 	}
@@ -91,7 +122,7 @@ public class ChessComputerPlayer extends ChessPlayer {
 		int weaknesses = sw.getWeaknesses();
 		
 		double adjustedStrengths = strengths * -log2(((double) level) / ((double) maxLevel));
-		double adjustedWeaknesses = weaknesses * -log2(((double) level) / ((double) maxLevel * 2d));
+		double adjustedWeaknesses = weaknesses * -log2(((double) level) / ((double) maxLevel * 1.5d));
 		
 		int favor = (int) (adjustedStrengths - adjustedWeaknesses);
 		

@@ -17,7 +17,7 @@ public enum ChessPiece {
 	C_KNIGHT(20, false),
 	C_ROOK(20, false),
 	C_BISHOP(20, false),
-	C_KING(1000, false),
+	C_KING(10000, false),
 	C_QUEEN(50, false);
 	
 	private final int value;

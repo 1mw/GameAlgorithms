@@ -47,7 +47,8 @@ public class ChessMove {
 	
 	public boolean isValidMove(ChessBoard board) {
 		return ChessBoard.inBounds(ax, ay) && ChessBoard.inBounds(bx, by) 
-			&& board.getPiece(ax, ay).getPossibleMoves(ax, ay, board).contains(new Coordinate(bx, by));
+				&& board.getPiece(ax, ay) != null
+				&& board.getPiece(ax, ay).getPossibleMoves(ax, ay, board).contains(new Coordinate(bx, by));
 	}
 	
 	@Override
